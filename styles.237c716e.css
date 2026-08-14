@@ -1,0 +1,119 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    row-gap: 24px;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #fb01c0;
+    border-radius: 10px;
+    width: 300px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgb(1, 67, 251);
+}
+
+.form-title {
+    color: white;
+    font-size: 25px;
+    margin: 0;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+    align-items: center;
+    justify-content: center;
+}
+input {
+    border: 2px solid #fb01c0;
+    border-radius: 7px;
+    padding: 5px;
+    width: 250px;
+    color: #fb01c0;
+}
+input::placeholder {
+    color: #fb01c0;
+}
+
+.add-button {
+    display: block;
+    width: 100px;
+    background-color: #fb01c0;
+    border: 1px solid #fb01c0;
+    border-radius: 7px;
+    color: white;
+    font-weight: 600;
+    padding: 5px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contacts-title {
+    margin: 0;
+    margin-top: 90px;
+    margin-bottom: 30px;
+    font-size: 28px;
+    width: 900px;
+    text-align: left;
+}
+
+.contacts {
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    align-items: center;
+    margin: 0;
+}
+
+.contacts-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    row-gap: 18px;
+    padding: 10px;
+    background-color: rgb(242, 239, 239);
+    border-radius: 7px;
+    width: 900px;
+}
+
+.thumb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.name {
+    margin: 0;
+    text-transform: capitalize;
+    font-size: 19px;
+}
+
+.number, .email {
+    font-size: 17px;
+}
+
+.holder {
+    display: flex;
+    justify-content: space-between;
+}
+
+.close-btn {
+    background-color: #fff;
+    color: red;
+    border: 1px solid black;
+    display: block;
+    width: 60px;
+    height: 30px;
+}
+
+/*# sourceMappingURL=/styles.237c716e.css.map */
