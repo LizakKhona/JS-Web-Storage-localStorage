@@ -121,6 +121,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 const contacts = document.querySelector(".contacts");
 const form = document.querySelector(".form");
 const containerElem = document.querySelector(".container");
+const contactsHolder = document.querySelector(".contacts-holder");
 const inputs = {
   nameInput: document.querySelector("input[id='name']"),
   surnameInput: document.querySelector("input[id='surname']"),
@@ -131,10 +132,8 @@ const nameInput = inputs.nameInput,
   surnameInput = inputs.surnameInput,
   numberInput = inputs.numberInput,
   emailInput = inputs.emailInput;
-if (localStorage.length === 0) {
-  containerElem.insertAdjacentHTML("beforeend", "\n        <p class=\"contacts-holder\">You'll see your contacts here</p>\n        ");
-}
 if (localStorage.length > 0) {
+  contactsHolder.style.display = 'none';
   for (let i = 0; i < localStorage.length; i++) {
     const contact = localStorage.key(i);
     const rootMain = JSON.parse(localStorage.getItem(contact));
@@ -152,7 +151,6 @@ function onFormSubmit(event) {
   }));
   const root = JSON.parse(localStorage.getItem("".concat(nameInput.value, "-").concat(surnameInput.value)));
   contacts.insertAdjacentHTML("beforeend", "\n        <li data-root=\"".concat(nameInput.value, "-").concat(surnameInput.value, "\" class=\"contacts-item\">\n                <div class=\"thumb\">\n                    <h3 class=\"name\">").concat(root.nameInput, " ").concat(root.surnameInput, "</h3>\n                    <a class=\"number\" href=\"tel:").concat(root.numberInput, "\">").concat(root.numberInput, "</a>\n                </div>\n                <div class=\"holder\">\n                    <a class=\"email\" href=\"mailto: ").concat(root.emailInput, "\">").concat(root.emailInput, "</a>\n                    <button class=\"close-btn\">X</button>\n                </div>\n            </li>\n            "));
-  const contactsHolder = document.querySelector(".contacts-holder");
   nameInput.value = "";
   surnameInput.value = "";
   numberInput.value = "";
@@ -162,7 +160,6 @@ function onFormSubmit(event) {
 contacts.addEventListener("click", onCloseBtnClick);
 function onCloseBtnClick(event) {
   const deleteBtn = event.target;
-  const contactsHolder = document.querySelector(".contacts-holder");
   if (deleteBtn.classList.contains("close-btn")) {
     const liItem = deleteBtn.parentNode.parentNode;
     liItem.remove();
@@ -197,7 +194,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50413" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64081" + '/');
   ws.onmessage = function (event) {
     checkedAssets = {};
     assetsToAccept = [];
